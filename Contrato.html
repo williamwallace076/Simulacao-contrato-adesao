@@ -37,17 +37,18 @@
         }
         .reveal-btn {
             display: inline-block;
-            padding: 8px 16px;
-            background-color: #28a745;
-            color: white;
+            background-color: transparent;
+            color: #1be145 ;
             border: none;
             cursor: pointer;
             border-radius: 5px;
             font-size: 14px;
             margin-top: 20px;
+            margin-left: -0.2rem;
+            font-weight: bolder;
         }
         .reveal-btn:hover {
-            background-color: #218838;
+            color: #04b92b;
         }
         .accept-btn {
             display: block;
@@ -63,12 +64,6 @@
         }
         .accept-btn:hover {
             background-color: #0056b3;
-        }
-        .disclaimer {
-            margin-top: 20px;
-            font-size: 12px;
-            color: #777;
-            text-align: center;
         }
         .warning {
             color: red;
@@ -98,7 +93,7 @@
         <p>O usuário pode cancelar sua adesão a qualquer momento, seguindo os procedimentos descritos na plataforma.</p>
 
         <!-- Botão para revelar as cláusulas ocultas -->
-        <button class="reveal-btn" onclick="revealClauses()">Ver Mais...</button>
+        <button id="toggleButton" class="reveal-btn" onclick="revealClauses()">Ver Mais...</button>
 
         <!-- Cláusulas agressivas (inicialmente ocultas) -->
         <div id="clause1" class="clause-hidden">
@@ -128,12 +123,25 @@
     </div>
 
     <script>
+
+        var isVisible = false;
         // Função para revelar as cláusulas ocultas
         function revealClauses() {
-            document.getElementById('clause1').style.display = 'block';
-            document.getElementById('clause2').style.display = 'block';
-            document.getElementById('clause3').style.display = 'block';
-            document.getElementById('clause4').style.display = 'block';
+
+            isVisible = !isVisible
+
+            document.getElementById('clause1').style.display = isVisible? 'block' : "none";
+            document.getElementById('clause2').style.display = isVisible? 'block' : "none";
+            document.getElementById('clause3').style.display = isVisible? 'block' : "none";
+            document.getElementById('clause4').style.display = isVisible? 'block' : "none";
+
+        // Obtém o botão
+        var button = document.getElementById('toggleButton');
+
+         // Atualiza o texto do botão
+        button.innerText = isVisible ? 'Ver menos...' : 'Ver mais...';
+
+            
         }
 
         // Função que simula a aceitação do contrato

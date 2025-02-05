@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simulação de Contrato Virtual - Cláusulas Ocultas</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 20px;
+        }
+        .container {
+            background-color: white;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+        h1 {
+            text-align: center;
+            color: #333;
+        }
+        p {
+            color: #555;
+            line-height: 1.6;
+        }
+        .clause-hidden {
+            display: none;
+            color: red;
+            margin-top: 20px;
+            background-color: #f9d6d6;
+            padding: 10px;
+            border-radius: 5px;
+        }
+        .reveal-btn {
+            display: inline-block;
+            padding: 8px 16px;
+            background-color: #28a745;
+            color: white;
+            border: none;
+            cursor: pointer;
+            border-radius: 5px;
+            font-size: 14px;
+            margin-top: 20px;
+        }
+        .reveal-btn:hover {
+            background-color: #218838;
+        }
+        .accept-btn {
+            display: block;
+            width: 100%;
+            padding: 10px;
+            margin-top: 30px;
+            background-color: #007BFF;
+            color: white;
+            font-size: 18px;
+            border: none;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+        .accept-btn:hover {
+            background-color: #0056b3;
+        }
+        .disclaimer {
+            margin-top: 20px;
+            font-size: 12px;
+            color: #777;
+            text-align: center;
+        }
+        .warning {
+            color: red;
+            font-weight: bold;
+            font-size: 13px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Contrato de Adesão Virtual TelecomPhone</h1>
+        <p>Bem-vindo(a) ao nosso serviço ! Para continuar a com a aquisição do seu produto, você precisa aceitar nosso contrato.</p>
+
+        <p>Ao aceitar este contrato, você concorda em utilizar nossos serviços conforme as condições descritas abaixo. Não se preocupe, todas as condições são totalmente justas e transparentes.</p>
+        
+        <!-- Cláusulas normais (inicialmente visíveis) -->
+        <h3>Cláusula 1: Responsabilidade Limitada</h3>
+        <p>A empresa não se responsabiliza por danos indiretos, perda de lucros ou danos decorrentes de uso indevido dos serviços, exceto nos casos previstos em lei.</p>
+
+        <h3>Cláusula 2: Atualizações de Serviços</h3>
+        <p>O serviço poderá ser alterado ou atualizado a qualquer momento, visando melhorias e a adaptação às necessidades dos usuários.</p>
+
+        <h3>Cláusula 3: Consentimento para Marketing</h3>
+        <p>Ao aceitar este contrato, você concorda que a empresa poderá enviar ofertas e promoções de seus produtos e serviços por e-mail ou outros canais.</p>
+
+        <h3>Cláusula 4: Cancelamento de Serviço</h3>
+        <p>O usuário pode cancelar sua adesão a qualquer momento, seguindo os procedimentos descritos na plataforma.</p>
+
+        <!-- Botão para revelar as cláusulas ocultas -->
+        <button class="reveal-btn" onclick="revealClauses()">Ver Mais...</button>
+
+        <!-- Cláusulas agressivas (inicialmente ocultas) -->
+        <div id="clause1" class="clause-hidden">
+            <h3>Cláusula 5: Coleta de Dados</h3>
+            <p>Ao aceitar este contrato, você concorda que todos os seus dados pessoais, incluindo nome, endereço, número de telefone e histórico de navegação, serão coletados, armazenados e utilizados para fins comerciais, sem qualquer restrição.</p>
+        </div>
+
+        <div id="clause2" class="clause-hidden">
+            <h3>Cláusula 6: Compartilhamento de Dados</h3>
+            <p>Você também concorda que seus dados poderão ser compartilhados com nossos parceiros comerciais, sem necessidade de seu consentimento adicional.</p>
+        </div>
+
+        <div id="clause3" class="clause-hidden">
+            <h3>Cláusula 7: Alterações Contratuais</h3>
+            <p>Reservamo-nos o direito de modificar este contrato a qualquer momento, sem aviso prévio. O uso contínuo de nossos serviços após essas alterações constitui sua aceitação integral dos novos termos.</p>
+        </div>
+
+        <div id="clause4" class="clause-hidden">
+            <h3>Cláusula 8: Não Responsabilidade</h3>
+            <p>Não nos responsabilizamos por qualquer dano ou prejuízo causado ao usuário devido ao uso de nossos serviços, inclusive danos à privacidade ou segurança.</p>
+        </div>
+
+        <p class="warning">Aviso: Ao confirmar você concorda com todos as cláusulas do contrato.</p>
+
+        <button class="accept-btn" onclick="acceptContract()">Aceito e Concordo Com o Contrato</button>
+
+    </div>
+
+    <script>
+        // Função para revelar as cláusulas ocultas
+        function revealClauses() {
+            document.getElementById('clause1').style.display = 'block';
+            document.getElementById('clause2').style.display = 'block';
+            document.getElementById('clause3').style.display = 'block';
+            document.getElementById('clause4').style.display = 'block';
+        }
+
+        // Função que simula a aceitação do contrato
+        function acceptContract() {
+            alert("Você aceitou o contrato! Seus dados estão agora sendo coletados e compartilhados.");
+        }
+    </script>
+</body>
+</html>
